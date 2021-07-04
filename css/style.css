@@ -81,6 +81,7 @@ body {
   box-shadow: 0 3px 20px rgba(f, f, f, 0.1);
   border-radius: 12px;
   padding: 30px;
+  background-color: #fff;
 }
 
 .about {
@@ -93,4 +94,21 @@ body {
 
 .about p {
   color: #fff;
+}
+
+.services {
+  background-color: black;
+}
+
+.services h2 {
+  color: #fff;
+}
+
+.services .container h3 {
+  color: #fff;
+}
+
+.carousel-item .card {
+  width: 12rem;
+  height: 20rem;
 }

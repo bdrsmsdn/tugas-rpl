@@ -93,12 +93,18 @@ body {
   background-color: #000;
 }
 
+.about img {
+  height: auto;
+  max-width: 100%;
+}
+
 .about h2 {
   color: #fff;
 }
 
 .about p {
   color: #fff;
+  text-align: left;
 }
 
 .services {
@@ -193,10 +199,16 @@ body {
   font-family: 'Pacifico', cursive;
 }
 
-.images {
-  margin: 0;
-  float: left;
+/* .images {
+  display: grid;
+  filter: brightness(0.7) grayscale(0.3);
 }
+
+.images img {
+  float: left;
+  width: 192.7px;
+  height: 192.7px;
+} */
 
 .footer h1 {
   text-align: center;
@@ -204,8 +216,20 @@ body {
   color: white;
 }
 
+/* .footer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  position: absolute;
+  bottom: 0;
+} */
+
 .footer {
-  background-image: url('https://images.unsplash.com/photo-1585773818428-b50bebdc2344?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=780&q=80');
+  position: relative;
+  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1601174931083-0ba9cd167daf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
 }
 
 #btnsocmed {
@@ -235,6 +259,10 @@ body {
 }
 
 @media only screen and(max-width: 768px) {
+  .about img {
+    background-size: cover;
+    height: auto;
+  }
   .gallery {
     position: relative;
     height: auto;

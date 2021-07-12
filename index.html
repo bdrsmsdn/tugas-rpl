@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eResto</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./style2.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
   </head>
@@ -25,22 +25,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active" aria-current="page" href="#jumbotron">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Services</a>
+                  <a class="nav-link" href="#services">Services</a>
                 </li>
-                <button class="btn btn-outline-warning" type="submit">Log in</button>
+                <a href="login.html" class="btn btn-outline-warning" type="submit">Log in</a>
               </ul>
             </div>
           </div>
         </nav>
 
         <!-- JUMBOTRON -->
-        <section class="jumbotron jumbotron-fluid text-center">
+        <section class="jumbotron jumbotron-fluid text-center" id="jumbotron">
           <div class="container">
             <div class="row">
               <div class="col">
@@ -54,7 +54,7 @@
     </div>
 
     <!-- PANEL -->
-    <section class="panel">
+    <!-- <section class="panel">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10 info-panel">
@@ -78,236 +78,165 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container">
         <div class="row">
           <div class="col mt-5 mb-3 text-center">
-            <h2>About</h2>
+            <h2>ABOUT</h2>
+            <center><hr width="15%" size="5px" style="color: yellow" /></center>
           </div>
         </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4 mb-3 mt-3">
+        <div class="row">
+          <div class="col-md-6 mb-5 mt-3">
+            <img src="https://images.unsplash.com/photo-1580866490076-7f49e396e4de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="" />
+          </div>
+          <div class="col-md-6 mb-5 mt-3 fs-5">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi explicabo quos sit. Quia accusamus, perferendis omnis numquam fugiat voluptates iusto consequuntur, quas et cum non unde. Veritatis quidem veniam eligendi.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- parallax -->
+    <section class="parallax">
+      <div class="parallaxx">
+        <h1 class="display-1">eResto</h1>
+      </div>
+    </section>
+
     <!-- SERVICES -->
-    <section class="services">
+    <section class="services" id="services">
       <div class="container">
         <div class="row">
-          <div class="col mt-3 mb-5 text-center">
-            <h2>Our Services</h2>
+          <div class="col mt-5 mb-5 text-center">
+            <h2>SERVICES</h2>
+            <center><hr width="20%" size="5px" style="color: yellow" /></center>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div class="row">
-              <div class="card p-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-6">
-                      <h3 style="color: #000">Menu</h3>
-                    </div>
-                    <div class="col-6 text-end">
-                      <button class="btn btn-dark" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-                        <i class="bi bi-arrow-left-square-fill"></i>
-                      </button>
-                      <button class="btn btn-dark" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-                        <i class="bi bi-arrow-right-square-fill"></i>
-                      </button>
-                    </div>
+            <div class="card mb-5" id="menuu">
+              <div class="card-body">
+                <div class="gallery mb-3" id="gallery">
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1527619348750-7f8a677fcd5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80" alt="" />
                   </div>
-                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="row">
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row">
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row">
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3 mt-3">
-                            <div class="card">
-                              <img
-                                class="img-fluid"
-                                alt="100%x280"
-                                src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6"
-                              />
-                              <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=686&q=80" alt="" />
                   </div>
+
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1556994302-558991b74265?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=282&q=80" alt="" />
+                  </div>
+
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1561964191-a356867bbb34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" />
+                  </div>
+
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1583182871122-3ddca4368b05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80" alt="" />
+                  </div>
+
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="" />
+                  </div>
+
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1536936114683-1e27e62e3e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=543&q=80" alt="" />
+                  </div>
+                  <div class="grid-img">
+                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGRyaW5rfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
+                  </div>
+                </div>
+                <div class="row-mt-3 text-center">
+                  <button id="btnsee" class="btn btn-warning">See All</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="row">
-              <div class="card ms-3 p-1">
-                <div class="card-body" id="top-5-scroll">
-                  <div class="row">
-                    <h3 style="color: #000">Top Menu</h3>
-                  </div>
-                  <div class="row">
-                    <div class="col-mt-3">
-                      <table class="table table-striped table-responsive-sm">
-                        <tbody class="text-start">
-                          <tr>
-                            <div class="row-mb-3">
-                              <td><img class="rounded float-start" width="55" src="./assets/img/products/product-3-50.png" alt="product" /></td>
-                              <td><h5>Iphone</h5></td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div class="row-mb-3">
-                              <td><img class="rounded float-start" width="55" src="./assets/img/products/product-3-50.png" alt="product" /></td>
-                              <td><h5>Iphone</h5></td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div class="row-mb-3">
-                              <td><img class="rounded float-start" width="55" src="./assets/img/products/product-3-50.png" alt="product" /></td>
-                              <td><h5>Iphone</h5></td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div class="row-mb-3">
-                              <td><img class="rounded float-start" width="55" src="./assets/img/products/product-3-50.png" alt="product" /></td>
-                              <td><h5>Iphone</h5></td>
-                            </div>
-                          </tr>
-                          <tr>
-                            <div class="row-mb-3">
-                              <td><img class="rounded float-start" width="55" src="./assets/img/products/product-3-50.png" alt="product" /></td>
-                              <td><h5>Iphone</h5></td>
-                            </div>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- images -->
+    <!-- <section class="images">
+      <div class="imagess">
+        <img src="https://images.unsplash.com/photo-1526401281623-279b498f10f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1596710629144-6f6abf933384?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1613142153918-650019a1ebcf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1471440671318-55bdbb772f93?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1505252912265-4e83cec30e2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=522&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1605618826115-fb9e775cfb40?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1559001724-fbad036dbc9e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="" />
+      </div>
+    </section> -->
+
+    <!-- footer -->
+    <section class="footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col mt-5 mb-3 text-center">
+            <h1>eResto</h1>
+            <center><hr width="15%" size="5px" style="color: yellow" /></center>
+          </div>
+        </div>
+        <div class="footerr">
+          <div class="row mb-5 justify-content-center" id="contact">
+            <div class="col-sm-6">
+              <div class="row justify-content-center">
+                <div class="col-sm-1">
+                  <a href="https://facebook.com/badra.srn" id="btnsocmed" class="btn btn-dark"><i class="bi bi-facebook"></i></a>
+                </div>
+                <div class="col-sm-1">
+                  <a href="https://instagram.com/bdrsmsdn" id="btnsocmed" class="btn btn-dark"><i class="bi bi-instagram"></i></a>
+                </div>
+                <div class="col-sm-1">
+                  <a href="https://wa.me/6281281817375" id="btnsocmed" class="btn btn-dark"><i class="bi bi-whatsapp"></i></a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+        <div class="container foot">
+          <div class="row-mt-3 mb-5">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h5>About</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatum eveniet velit vero earum reiciendis recusandae saepe pariatur non voluptatem!</p>
+                </div>
+                <div class="col-lg">
+                  <h5>Archives</h5>
+                  <ul>
+                    <li>2020</li>
+                    <li>2019</li>
+                    <li>2018</li>
+                  </ul>
+                </div>
+                <div class="col-lg">
+                  <h5>Recipes</h5>
+                  <ul>
+                    <li>Browse Recipes</li>
+                    <li>Recipe Page</li>
+                    <li>Submit Recipe</li>
+                  </ul>
+                </div>
+                <div class="col-lg">
+                  <h5>Newsletter</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatum eveniet velit vero earum reiciendis recusandae saepe pariatur non voluptatem!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center" style="color: white">
+          <p>
+            Made with <span><i class="bi bi-heart"></i></span> by Dawet Team
+          </p>
         </div>
       </div>
     </section>

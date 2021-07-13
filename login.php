@@ -1,3 +1,4 @@
+<?php include_once("functions.php");?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,11 +12,27 @@
   </head>
   <body>
     <div class="login-wrapper">
-      <form action="" class="form">
+      <form action="valid-login.php" method="post" class="form">
         <h2>Welcome</h2>
+        <?php
+if (isset($_GET["error"])) {
+$error = $_GET["error"];
+if ($error == 1)
+showError("username atau password tidak sesuai.");
+else if ($error == 2)
+showError("Error database. Silahkan hubungi administrator");
+else if ($error == 3)
+showError("Koneksi ke Database gagal. Autentikasi gagal.");
+else if ($error == 4)
+showError("Anda tidak boleh mengakses halaman sebelumnya karena belum login.
+Silahkan login terlebih dahulu.");
+else
+showError("Unknown Error.");
+}
+?>
         <div class="input-group">
           <label for="username">Username</label>
-          <input id="username" type="text" class="form-control" name="username tabindex="1" required autofocus />
+          <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus />
           <div class="invalid-feedback">Please fill in your email</div>
         </div>
         <div class="input-group">
@@ -23,7 +40,7 @@
           <input id="password" type="password" class="form-control" name="password" required />
           <div class="invalid-feedback">Please fill in your password</div>
         </div>
-        <button type="submit" class="btn btn-warning btn-lg btn-block justify-content-center" tabindex="4">Login</button>
+        <button type="submit" name="TblLogin" class="btn btn-warning btn-lg btn-block justify-content-center" tabindex="4">Login</button>
       </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>

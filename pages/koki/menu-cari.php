@@ -21,25 +21,28 @@
                 </form>
               </div>
             </div>
-            <?php
+                <!-- <div class="col-lg-12 col-md-12"> -->
+<?php
+if(isset($_POST["TblCari"]))
 $db=dbConnect();
 $batas = 10;
 $halaman = isset($_GET['halaman'])?(int)$_GET['halaman'] : 1;
 $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;	
-
+$dicari=$db->escape_string($_POST["cari"]);
   $previous = $halaman - 1;
   $next = $halaman + 1;
   
-	$data=mysqli_query($conn,"SELECT * FROM minuman");
+	$data=mysqli_query($conn,"SELECT * FROM minuman where nama_minuman like '%$dicari%'");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);
 $halaman_2akhir = $total_halaman - 1;
 $adjacents = "2";
 
-$data_produk = mysqli_query($conn,"SELECT * FROM minuman limit $halaman_awal, $batas");
+$data_produk = mysqli_query($conn,"SELECT * FROM minuman where nama_minuman like '%$dicari%' limit $halaman_awal, $batas");
 				$nomor = $halaman_awal+1;
+        if($jumlah_data){
        ?> 
-            <div class="row">
+       <div class="row">
                   <table class="table table-dark text-white text-center table-striped table-responsive-sm">
                     <tr>
                         <th>No</th><th>Nama Minuman</th><th>Stok Tersedia</th>
@@ -72,13 +75,35 @@ $data_produk = mysqli_query($conn,"SELECT * FROM minuman limit $halaman_awal, $b
                             </div>
                         </td>
                     </tr>
-                    <?php
+			<?php
 		}
 		?>
-    </table>
-                  </div>
-                  <nav aria-label="Search results">
-			<ul class="pagination justify-content-center">
+		</table>
+    <?php
+  } else {
+  ?>
+            <div class="row justify-content-center">
+                    <div class="empty-state" data-height="400">
+                      <div class="empty-state-icon">
+                        <i class="fas fa-question"></i>
+                      </div>
+                      <h2>Data tidak ditemukan</h2>
+                      <p class="lead">
+                        Kami tidak bisa menemukan data yang kamu cari, coba kata kunci lain.
+                      </p>
+                      <a href="javascript:history.back()" class="btn btn-primary mt-4">Menu</a>
+                    </div>
+            </div>
+  <?php
+  }
+  ?>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+            <div class="row">
+                <div class="col">
+                <nav aria-label="Search results">
+			<ul class="pagination justify-content-left">
 				<li class="page-item">
 					<a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$previous'"; } ?>>Previous</a>
 				</li>
@@ -191,12 +216,8 @@ $data_produk = mysqli_query($conn,"SELECT * FROM minuman limit $halaman_awal, $b
         ?>
 			</ul>
 		</nav>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-<?php require_once('./footer.php') ?>
+    <?php include_once("./footer.php");?>
+
 <!-- Modal TAMPIL-->
 <div class="modal fade" id="tampil_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">

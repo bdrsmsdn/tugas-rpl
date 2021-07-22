@@ -140,7 +140,7 @@ $nk = $_SESSION["nama_karyawan"];
                 <!-- <a href="./features/admin/features-activities.php" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i> Aktifitas </a> -->
                 <a href="./features/admin/features-settings.php" class="dropdown-item has-icon"> <i class="fas fa-cog"></i> Pengaturan </a>
                 <div class="dropdown-divider"></div>
-                <a href="logout.php" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i> Log out </a>
+                <a href="../../logout.php" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i> Log out </a>
               </div>
             </li>
           </ul>

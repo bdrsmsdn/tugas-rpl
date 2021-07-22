@@ -64,6 +64,11 @@
   outline: none;
 }
 
+#cart-count {
+  border-radius: 50%;
+  width: 50px;
+}
+
 a {
   color: #ffa426;
   font-weight: 500;

@@ -208,24 +208,43 @@ $data_produk = mysqli_query($conn,"SELECT * FROM minuman limit $halaman_awal, $b
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" name="frm" class="needs-validation" action="">
+        <form method="post" name="frm" class="needs-validation" action="menu-tampil.php">
         <div class="row">
             <div class="form-group col-md-8 col-12">
             <tr>
                 <td>Stok untuk hari ini</td>
-                <td><input type="number" class="form-control" id="id_minumanq" name="id_minuman" maxlength="15" required></td>
+                <td><input type="number" class="form-control" id="stt" name="stt" maxlength="15" required></td>
+            </tr>
+            <tr>
+                <td><input type="hidden" class="form-control" id="iddd" name="ed" maxlength="15"></td>
             </tr>
             </div>
         </div>            
     </div>
           <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button class="btn btn-warning" name="TblTampil">Submit</button>
+        <button class="btn btn-warning" name="TblShow">Submit</button>
       </div>
     </div>
   </div>
           </form>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('.TblTampil').on('click', function(){
+      $('#tampil_modal').modal('show');
+
+      $tr = $(this).closest('tr');
+
+      var data = $tr.children("td").map(function(){
+        return $(this).text();
+      }).get();
+      
+      $('#iddd').val(data[0]);
+    })
+  })
+</script>
 
 <!-- Modal DELETE-->
 <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

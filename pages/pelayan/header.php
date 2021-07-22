@@ -33,6 +33,7 @@ $nk = $_SESSION["nama_karyawan"];
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
 
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="../../node_modules/jqvmap/dist/jqvmap.min.css" />
@@ -140,7 +141,7 @@ $nk = $_SESSION["nama_karyawan"];
                 <!-- <a href="./features/admin/features-activities.php" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i> Aktifitas </a> -->
                 <a href="./features/admin/features-settings.php" class="dropdown-item has-icon"> <i class="fas fa-cog"></i> Pengaturan </a>
                 <div class="dropdown-divider"></div>
-                <a href="logout.php" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i> Log out </a>
+                <a href="../../logout.php" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i> Log out </a>
               </div>
             </li>
           </ul>
@@ -156,9 +157,8 @@ $nk = $_SESSION["nama_karyawan"];
             <ul class="sidebar-menu">
               <li class="menu-header">Pesanan</li>
               <li class="nav-item dropdown active">
-                <a href="index.php"><i class="fas fa-inbox"></i><span>Info Pesanan Masuk</span></a>
+                <a href="index.php"><i class="fas fa-inbox"></i><span>Pemesanan</span></a>
               </li>
-               <li class="menu-header">Menu</li>
                <!-- <li class="nav-item dropdown">
                 <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i><span>Menu</span></a>
                 <ul class="dropdown-menu">
@@ -167,7 +167,7 @@ $nk = $_SESSION["nama_karyawan"];
                 </ul>
               </li> -->
               <li class="nav-item dropdown">
-                <a href="menu.php"><i class="fas fa-file-alt"></i><span>Menu</span></a>
+                <a href="menu.php"><i class="fas fa-file-alt"></i><span>Lihat Pesanan</span></a>
               </li>
             </ul>
           </aside>

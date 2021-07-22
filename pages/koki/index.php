@@ -1,4 +1,6 @@
 <?php require_once('./header.php') ?>
+<?php $db=dbConnect();
+$data=mysqli_query($conn,"SELECT m.nama_minuman, p.jumlah_pesanan, m.stok, m.harga_minuman FROM pesanan as p JOIN minuman as m USING(id_minuman) ORDER BY tanggal desc"); ?>
         <!-- Main Content -->
         <div class="main-content">
           <section class="section">
@@ -22,45 +24,32 @@
                         <tr>
                           <th>No</th>
                           <th>Nama Minuman</th>
-                          <th>Qty</th>
                           <th>Harga</th>
+                          <th>Qty</th>
+                          <th>Total Harga</th>
                           <th>Status</th>
                         </tr>
+                        <?php 
+                        $no = 1;
+                        foreach($data as $d) :
+                        ?>
                         <tr>
-                          <td>1</td>
-                          <td>Dawet Premium</td>
-                          <td>10</td>
-                          <td>100000</td>
-                          <td><div class="badge badge-success">DITERIMA</div></td>
+                          <td><?= $no++; ?></td>
+                          <td><?= $d['nama_minuman']; ?></td>
+                          <td><?= $d['harga_minuman']; ?></td>
+                          <td><?= $d['jumlah_pesanan']; ?></td>
+                          <td><?= $d['harga_minuman'] * $d['jumlah_pesanan']; ?></td>
+                          <td>
+                            <?php 
+                              if ($d['stok'] > $d['jumlah_pesanan']) {
+                                echo '<div class="badge badge-success">DITERIMA</div>';
+                              } else {
+                                echo '<div class="badge badge-danger">DITOLAK</div>';
+                              }
+                            ?>                            
+                          </td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Dawet Original</td>
-                          <td>10</td>
-                          <td>80000</td>
-                          <td><div class="badge badge-success">DITERIMA</div></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Dawet Americano</td>
-                          <td>10</td>
-                          <td>100000</td>
-                          <td><div class="badge badge-danger">STOK HABIS</div></td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Dawet Premium</td>
-                          <td>10</td>
-                          <td>100000</td>
-                          <td><div class="badge badge-success">DITERIMA</div></td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Dawet Premium</td>
-                          <td>10</td>
-                          <td>100000</td>
-                          <td><div class="badge badge-danger">STOK HABIS</div></td>
-                        </tr>
+                        <?php endforeach; ?>
                       </table>
                     </div>
                   </div>

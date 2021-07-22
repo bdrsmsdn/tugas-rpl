@@ -40,7 +40,15 @@ showError("Unknown Error.");
           <input id="password" type="password" class="form-control" name="password" required />
           <div class="invalid-feedback">Please fill in your password</div>
         </div>
-        <button type="submit" name="TblLogin" class="btn btn-warning btn-lg btn-block justify-content-center" tabindex="4">Login</button>
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="karyawan" class="custom-control-input" id="agree" />
+            <label class="custom-control-label" for="agree">Login sebagai karyawan</label>
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          <button type="submit" name="TblLogin" class="btn btn-warning btn-lg btn-block justify-content-center" tabindex="4">Login</button>
+        </div>
       </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>

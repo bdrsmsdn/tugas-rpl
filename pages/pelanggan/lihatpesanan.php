@@ -85,23 +85,29 @@ if (isset($_POST['id'], $_POST['qty'])) {
                             }
                         }                        
                         ?>
-                        <tr>
+                        <form action="transaksi.php">
+
+                            <tr>
+                                <!-- <td colspan="2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="np" placeholder="Masukkan nama pelanggan" required="">
+                                </div>
+                                </td> -->
                         <td colspan="4" align="right"><strong>Total Bayar</strong></td>
                         <?php if(!empty($_SESSION['cart'])){ ?>
                         <td><strong><?= $total_bayar; ?></strong></td>
                         <?php 
                         
                     } else {
-?>
+                        ?>
 <td><strong>0</strong></td>
 <?php
                         } ?>
                         <td align="center">
-                         <a href="transaksi.php">
-                          <button class="btn btn-success btn-sm shadow-none">Checkout</button>
-                         </a>
+                                <button type="submit" class="btn btn-success btn-sm shadow-none">Checkout</button>
                         </td>
-                       </tr>
+                    </tr>
+                </form>
                       </table>
                                  
             </div>

@@ -44,7 +44,7 @@ if($db->connect_errno==0){
 						header("Location:./pages/koki/index.php");
 					} else if ($_SESSION["level"]=$data["level"]==3)
 					{
-						header("Location:index-kasir.php");
+						header("Location:./pages/kasir/index.php");
 					} else if ($_SESSION["level"]=$data["level"]==4){
 						header("Location:./pages/pelayan/index.php");
 					}

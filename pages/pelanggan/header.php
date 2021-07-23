@@ -90,6 +90,9 @@ $nk = $_SESSION["nama_pelanggan"];
               <li class="nav-item dropdown active">
                 <a href="index.php"><i class="fas fa-inbox"></i><span>Menu</span></a>
               </li>
+              <li class="nav-item dropdown">
+                <a href="bayar.php"><i class="fas fa-inbox"></i><span>Transaksi</span></a>
+              </li>
                <!-- <li class="nav-item dropdown">
                 <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i><span>Menu</span></a>
                 <ul class="dropdown-menu">

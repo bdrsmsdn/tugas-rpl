@@ -15,13 +15,13 @@ $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;
   $previous = $halaman - 1;
   $next = $halaman + 1;
   
-	$data=mysqli_query($conn,"select m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan");
+	$data=mysqli_query($conn,"select m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan AND p.status != 2");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);
 $halaman_2akhir = $total_halaman - 1;
 $adjacents = "2";
 
-$data_produk = mysqli_query($conn,"select p.id_pembayaran, p.nama_pelanggan, m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran, p.bukti, p.status, ps.jumlah_pesanan from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan limit $halaman_awal, $batas");
+$data_produk = mysqli_query($conn,"select p.id_pembayaran, p.nama_pelanggan, m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran, p.bukti, p.status, ps.jumlah_pesanan from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan and p.status != 2 limit $halaman_awal, $batas");
 				$nomor = $halaman_awal+1;
        ?> 
             <div class="row">

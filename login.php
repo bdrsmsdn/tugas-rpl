@@ -32,12 +32,12 @@ showError("Unknown Error.");
 ?>
         <div class="input-group">
           <label for="username">Username</label>
-          <input id="username" type="text" class="form-control" value="<?= $_COOKIE['username']; ?>" name="username" tabindex="1" required autofocus />
+          <input id="username" type="text" class="form-control" value="<?php isset($_COOKIE['username']) ? $_COOKIE['username'] : '' ?>" name="username" tabindex="1" required autofocus />
           <div class="invalid-feedback">Please fill in your email</div>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
-          <input id="password" type="password" class="form-control" value="<?= $_COOKIE['password']; ?>" name="password" required />
+          <input id="password" type="password" class="form-control" value="<?php isset($_COOKIE['password']) ? $_COOKIE['password'] : '' ?>" name="password" required />
           <div class="invalid-feedback">Please fill in your password</div>
         </div>
         <div class="form-group">

@@ -46,7 +46,7 @@ $data_produk = mysqli_query($conn,"select p.id_pembayaran, m.nama_minuman, p.tot
         <?php 
             if($d['status'] == 2){
               ?>
-                <td><a class="TblBayar shadow-none" href="" name="TblBayar" data-toggle="modal" data-id="modal" data-target="#bayar_modal"><div class="badge badge-danger">BAYAR</div></a></td>
+                <td><a class="TblBayar shadow-none" href="" name="TblBayar" data-toggle="modal" data-id="modal" data-target="#bayar_modal"><div class="badge badge-dark">BAYAR</div></a></td>
                 <?php
             } else if($d['status'] == 3) {
               echo '<td><div class="badge badge-warning">PENDING</div></td>';

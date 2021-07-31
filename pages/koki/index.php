@@ -1,6 +1,6 @@
 <?php require_once('./header.php') ?>
 <?php $db=dbConnect();
-$data=mysqli_query($conn,"SELECT m.nama_minuman, p.jumlah_pesanan, m.stok, m.harga_minuman FROM pesanan as p JOIN minuman as m USING(id_minuman) ORDER BY tanggal desc"); ?>
+$data=mysqli_query($conn,"SELECT pe.status, m.nama_minuman, p.jumlah_pesanan, m.stok, m.harga_minuman FROM pesanan as p JOIN minuman as m JOIN pembayaran as pe ON p.id_minuman = m.id_minuman AND pe.id_pesanan = p.id_pesanan ORDER BY tanggal desc"); ?>
         <!-- Main Content -->
         <div class="main-content">
           <section class="section">
@@ -15,7 +15,7 @@ $data=mysqli_query($conn,"SELECT m.nama_minuman, p.jumlah_pesanan, m.stok, m.har
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive table-invoice">
-                      <table class="table table-dark table-striped">
+                      <table class="table table-dark table-striped text-center">
                         <tr>
                           <th>No</th>
                           <th>Nama Minuman</th>
@@ -36,10 +36,10 @@ $data=mysqli_query($conn,"SELECT m.nama_minuman, p.jumlah_pesanan, m.stok, m.har
                           <td><?= $d['harga_minuman'] * $d['jumlah_pesanan']; ?></td>
                           <td>
                             <?php 
-                              if ($d['stok'] > $d['jumlah_pesanan']) {
+                              if ($d['status'] == 1 ) {
                                 echo '<div class="badge badge-success">DITERIMA</div>';
                               } else {
-                                echo '<div class="badge badge-danger">DITOLAK</div>';
+                                echo '<div class="badge badge-warning">PENDING</div>';
                               }
                             ?>                            
                           </td>

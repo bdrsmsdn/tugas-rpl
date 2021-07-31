@@ -64,9 +64,20 @@
   outline: none;
 }
 
+.stoq {
+  margin-top: 14rem;
+  position: relative;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
 #cart-count {
   border-radius: 50%;
-  width: 50px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  font-size: 10px;
 }
 
 a {

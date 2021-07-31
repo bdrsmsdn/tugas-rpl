@@ -34,7 +34,7 @@ $nk = $_SESSION["nama_pelanggan"];
     <link rel="stylesheet" href="../../node_modules/summernote/dist/summernote-bs4.css" />
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/style2.css" />
     <link rel="stylesheet" href="../../assets/css/components.css" />
   </head>
 

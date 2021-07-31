@@ -31,6 +31,7 @@ if(isset($_POST['TblBeli'])) {
 
 $db=dbConnect();
 $data=mysqli_query($conn,"SELECT * FROM minuman WHERE stok > 0");
+$jumlah_data = mysqli_num_rows($data);
 ?>
         <!-- Main Content -->
         <div class="main-content">
@@ -52,6 +53,7 @@ $data=mysqli_query($conn,"SELECT * FROM minuman WHERE stok > 0");
             ?>
             <div class="row">
             <?php               
+            if($jumlah_data){
                 foreach($data as $d) : ?>
                 <form method="post" action="index.php?id=<?= $d['id_minuman']; ?>">
                   <input type="hidden" name="id" value="<?= $d['id_minuman']; ?>" class="form-control"></input>
@@ -67,7 +69,6 @@ $data=mysqli_query($conn,"SELECT * FROM minuman WHERE stok > 0");
                           <div class="row">
                             <h6 class="card-subtitle mb-3">Rp. <?= $d['harga_minuman']; ?></h6>
                           </div>
-                          <!-- BELUM BIKIN VALIDASI KALO MESENNYA LEBIH DARI STOK YANG ADA -->
                           <div class="row row-mt-5 justify-content-center">
                             <div class="col-sm-6">
                               <input type="number" name="qty" value="1" min="1" max="<?= $d['stok']; ?>" class="form-control"></input>
@@ -85,7 +86,22 @@ $data=mysqli_query($conn,"SELECT * FROM minuman WHERE stok > 0");
                     </div>
                   </div>
                 </form>
-                <?php endforeach; ?>
+                <?php endforeach; 
+                } else { ?>
+                <div class="stoq row justify-content-center text-center">
+                <div class="row justify-content-center">
+                    <div class="empty-state">
+                      <div class="empty-state-icon bg-warning">
+                        <i class="far fa-frown"></i>
+                      </div>
+                      <h2>Kami kehabisan stok</h2>
+                      <p class="lead">
+                        Tidak ada menu yang ditampilkan. Cobalah beberapa saat lagi.
+                      </p>
+                    </div>
+            </div>
+                </div>                
+                <?php } ?>
               </div>
             </div>
           </section>

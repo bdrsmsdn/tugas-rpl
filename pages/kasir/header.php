@@ -21,6 +21,7 @@ $_SESSION["level"]=$_SESSION["level"];
 
 $nk = $_SESSION["nama_karyawan"];
 $jb = $_SESSION["jabatan"];
+$idk = $_SESSION["id_karyawan"];
 
 ?>
 <?php include_once("../../functions.php");?>

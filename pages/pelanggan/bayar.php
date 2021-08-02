@@ -3,6 +3,7 @@
 
 <?php 
 $dp=$_SESSION["nama_pelanggan"];
+$dpp=$_SESSION["id_pelanggan"];
 ?>
 
 <!-- Main Content -->
@@ -20,13 +21,13 @@ $halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;
   $previous = $halaman - 1;
   $next = $halaman + 1;
   
-	$data=mysqli_query($conn,"select m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan and p.nama_pelanggan = '$dp'");
+	$data=mysqli_query($conn,"select m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan and p.id_pelanggan = '$dpp'");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);
 $halaman_2akhir = $total_halaman - 1;
 $adjacents = "2";
 
-$data_produk = mysqli_query($conn,"select p.id_pembayaran, m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran, p.status from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan and p.nama_pelanggan = '$dp' ORDER BY p.id_pembayaran DESC limit $halaman_awal, $batas");
+$data_produk = mysqli_query($conn,"select p.id_pembayaran, m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran, p.status from pembayaran as p join minuman as m join pesanan as ps WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan and p.id_pelanggan = '$dpp' ORDER BY p.id_pembayaran DESC limit $halaman_awal, $batas");
 				$nomor = $halaman_awal+1;
        ?> 
             <div class="row">
@@ -51,7 +52,9 @@ $data_produk = mysqli_query($conn,"select p.id_pembayaran, m.nama_minuman, p.tot
             } else if($d['status'] == 3) {
               echo '<td><div class="badge badge-warning">PENDING</div></td>';
             } else {
-              echo '<td><div class="badge badge-success">LUNAS</div></td>';
+              ?>
+                <td><a href="./invoice.php?id=<?= $d['id_pembayaran']; ?>"><div class="badge badge-success">LUNAS</div></a></td>
+              <?php
             }
         ?>
         

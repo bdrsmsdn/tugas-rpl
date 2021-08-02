@@ -10,8 +10,10 @@ $_SESSION["id_pelanggan"]=$_SESSION["id_pelanggan"];
 $_SESSION["nama_pelanggan"]=$_SESSION["nama_pelanggan"];
 $_SESSION["alamat_pelanggan"]=$_SESSION["alamat_pelanggan"];
 $_SESSION["username"]=$_SESSION["username"];
+$_SESSION["email"]=$_SESSION["email"];
 
 $nk = $_SESSION["nama_pelanggan"];
+$em = $_SESSION["email"];
 
 ?>
 <?php include_once("../../functions.php");?>
@@ -20,7 +22,7 @@ $nk = $_SESSION["nama_pelanggan"];
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport" />
-    <title>Dashboard &mdash; Pelayan</title>
+    <title>Dashboard &mdash; Pelanggan</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />

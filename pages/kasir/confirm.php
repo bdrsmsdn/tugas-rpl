@@ -16,7 +16,7 @@ if(isset($_POST["TblConfirm"])){
         $id=$db->escape_string($_POST["id"]);
 		// Susun query update
 		$sql = "UPDATE pembayaran SET
-status=1 WHERE id_pembayaran='$id'";
+status=1, id_karyawan = $idk WHERE id_pembayaran='$id'";
 		// Eksekusi query update
 		$res=$db->query($sql);
 		if($res){

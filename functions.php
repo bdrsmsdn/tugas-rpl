@@ -66,6 +66,26 @@ function getUser($id_user){
 		return FALSE;
 }
 
+function getStruk($id){
+	$db=dbConnect();
+	if($db->connect_errno==0){
+		$res=$db->query("select p.id_pembayaran, pl.nama_pelanggan, m.nama_minuman, p.total_pembayaran, p.tgl_pembayaran, ps.jumlah_pesanan, pl.alamat_pelanggan from pembayaran as p join minuman as m join pesanan as ps join pelanggan as pl WHERE ps.id_minuman = m.id_minuman and ps.id_pesanan = p.id_pesanan and id_pembayaran = '$id'");
+		if($res){
+			if($res->num_rows>0){
+				$data=$res->fetch_assoc();
+				$res->free();
+				return $data;
+			}
+			else
+				return FALSE;
+		}
+		else
+			return FALSE; 
+	}
+	else
+		return FALSE;
+}
+
 function banner(){
 	?>
 <div id="banner"><h1>PT. Sagala Aya</h1>

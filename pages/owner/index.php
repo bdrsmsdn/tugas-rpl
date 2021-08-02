@@ -3,7 +3,11 @@ require_once('./header.php');
 $jd1 = mysqli_num_rows(mysqli_query($conn, "select * from minuman"));
 $jd2 = mysqli_num_rows(mysqli_query($conn, "select * from pelanggan"));
 $jd3 = mysqli_num_rows(mysqli_query($conn, "select * from pesanan"));
+$jml = mysqli_query($conn, "SELECT SUM(total_pembayaran) AS total FROM pembayaran WHERE status = 1")
  ?>
+
+<?php while($row = mysqli_fetch_assoc($jml)){                    
+?>
 
 <!-- Main Content -->
 <div class="main-content">
@@ -21,10 +25,11 @@ $jd3 = mysqli_num_rows(mysqli_query($conn, "select * from pesanan"));
                     <div class="card-header">
                       <h4 class="text-white">Total Pendapatan</h4>
                     </div>
-                    <div class="card-body text-white">???</div>
+                    <div class="card-body text-white">Rp. <?= number_format($row['total'], 0, ',', '.') ?></div>
                   </div>
                 </div>
               </div>
+              <?php } ?>
               <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="card bg-dark card-statistic-1">
                   <div class="card-icon bg-danger">

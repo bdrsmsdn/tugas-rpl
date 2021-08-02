@@ -41,13 +41,20 @@ if(isset($_POST["TblDaftar"])){
 		$email	   =$db->escape_string($_POST["email"]);
     $city	   =$db->escape_string($_POST["city"]);
 		$password	   =$db->escape_string($_POST["password"]);
+    $password2	   =$db->escape_string($_POST["password2"]);
 		// Susun query insert
         $sql2 = "SELECT username FROM pelanggan WHERE username='$username'";
         $sql3 = "SELECT email FROM pelanggan WHERE email='$email'";
 		// Eksekusi query insert
 		    $result = mysqli_query($conn, $sql2);
         $result3 = mysqli_query($conn, $sql3);
-        if (mysqli_num_rows($result) > 0) {
+        if($password != $password2){
+          ?>
+          <div class="alert alert-danger" role="alert">
+          Terjadi kesalahan, password tidak sesuai.<a href="auth-register.html"> Coba lagi.</a>
+          </div>
+          <?php
+        } elseif (mysqli_num_rows($result) > 0) {
           ?>
           <div class="alert alert-danger" role="alert">
           Terjadi kesalahan, username telah digunakan.<a href="auth-register.html"> Coba lagi.</a>

@@ -20,6 +20,7 @@ if($db->connect_errno==0){
 					$_SESSION["nama_pelanggan"]=$data["nama_pelanggan"];
 					$_SESSION["alamat_pelanggan"]=$data["alamat_pelanggan"];
 					$_SESSION["username"]=$data["username"];
+					$_SESSION["email"]=$data["email"];
 					header("Location:./pages/pelanggan/index.php");
 				} else {
 					header("Location: login.php?error=1");

@@ -2,14 +2,23 @@
 session_start();
 
 if (!isset($_SESSION["username"])) {
-  echo "Anda harus login dulu <br><a href='login.php'>Klik disini</a>";
+  header("location: ../../login.php", true, 301);
+  exit();
+  }
+
+if (!isset($_SESSION["level"])) {
+  echo "Anda tidak punya akses pada halaman Pemilik!";
 	exit;
 }
 
 $level=$_SESSION["level"];
+$jb = $_SESSION["jabatan"];
 
-if ($level!="2") {
-  echo "Anda tidak punya akses pada halaman Koki!";
+if ($level!="1" || $jb != 'pemilik') {
+  echo "Anda tidak punya akses pada halaman Pemilik!";
+  exit;
+} else if(!isset($level)){
+  echo "Anda tidak punya akses pada halaman Pemilik!";
   exit;
 }
 
@@ -20,7 +29,6 @@ $_SESSION["jabatan"]=$_SESSION["jabatan"];
 $_SESSION["level"]=$_SESSION["level"];
 
 $nk = $_SESSION["nama_karyawan"];
-$jb = $_SESSION["jabatan"];
 
 ?>
 <?php include_once("../../functions.php");?>

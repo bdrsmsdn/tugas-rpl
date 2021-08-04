@@ -1,8 +1,13 @@
 <?php
 session_start();
-
+include_once("../../functions.php");
 if (!isset($_SESSION["username"])) {
-  echo "Anda harus login dulu <br><a href='login.php'>Klik disini</a>";
+header("location: ../../login.php", true, 301);
+exit();
+}
+
+if (isset($_SESSION["level"])) {
+  echo "Anda tidak punya akses pada halaman Pelanggan!";
 	exit;
 }
 
@@ -16,7 +21,6 @@ $nk = $_SESSION["nama_pelanggan"];
 $em = $_SESSION["email"];
 
 ?>
-<?php include_once("../../functions.php");?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

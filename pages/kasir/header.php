@@ -1,14 +1,22 @@
 <?php
 session_start();
-
 if (!isset($_SESSION["username"])) {
-  echo "Anda harus login dulu <br><a href='login.php'>Klik disini</a>";
+  header("location: ../../login.php", true, 301);
+  exit();
+  }
+
+if (!isset($_SESSION["level"])) {
+  echo "Anda tidak punya akses pada halaman Kasir!";
 	exit;
 }
 
 $level=$_SESSION["level"];
+$jb = $_SESSION["jabatan"];
 
-if ($level!="3") {
+if ($level!="3" || $jb != 'kasir') {
+  echo "Anda tidak punya akses pada halaman Kasir!";
+  exit;
+} else if(!isset($level)){
   echo "Anda tidak punya akses pada halaman Kasir!";
   exit;
 }
@@ -20,7 +28,6 @@ $_SESSION["jabatan"]=$_SESSION["jabatan"];
 $_SESSION["level"]=$_SESSION["level"];
 
 $nk = $_SESSION["nama_karyawan"];
-$jb = $_SESSION["jabatan"];
 $idk = $_SESSION["id_karyawan"];
 
 ?>

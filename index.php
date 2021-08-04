@@ -1,3 +1,6 @@
+<?php 
+require_once('./functions.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -94,7 +97,10 @@
             <img src="https://images.unsplash.com/photo-1580866490076-7f49e396e4de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="" />
           </div>
           <div class="col-md-6 mb-5 mt-3 fs-5">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi explicabo quos sit. Quia accusamus, perferendis omnis numquam fugiat voluptates iusto consequuntur, quas et cum non unde. Veritatis quidem veniam eligendi.</p>
+            <p>
+              Eresto adalah sebuah restaurant fiksi virtual yang bergerak di bidang penjualan Dawet ke seluruh Indonesia. Eresto didirikan oleh lima orang mahasiswa Teknik Informatika Semester 4 guna memenuhi salah satu tugas besar mata
+              kuliah Rekayasa Perangkat Lunak. Saat ini eresto hanya menjual produk secara online. Silakan daftar dan memesan orderan fiksi kalian. Salam coding;
+            </p>
           </div>
         </div>
       </div>
@@ -121,39 +127,20 @@
             <div class="card mb-5" id="menuu">
               <div class="card-body">
                 <div class="gallery mb-3" id="gallery">
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1527619348750-7f8a677fcd5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80" alt="" />
-                  </div>
 
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=686&q=80" alt="" />
+                <?php 
+                  $data = mysqli_query($conn, "SELECT * FROM minuman LIMIT 8");
+                  foreach ($data as $d) {
+                    ?>
+                    <div class="grid-img">
+                    <img width="100%" height="100%" src="./upload/menu/<?= $d['gambar']; ?>" alt="" />
                   </div>
-
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1556994302-558991b74265?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=282&q=80" alt="" />
-                  </div>
-
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1561964191-a356867bbb34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" />
-                  </div>
-
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1583182871122-3ddca4368b05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80" alt="" />
-                  </div>
-
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="" />
-                  </div>
-
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1536936114683-1e27e62e3e9c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=543&q=80" alt="" />
-                  </div>
-                  <div class="grid-img">
-                    <img width="100%" height="100%" src="https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGRyaW5rfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
-                  </div>
+                    <?php
+                  }
+                ?>                  
                 </div>
                 <div class="row-mt-3 text-center">
-                  <button id="btnsee" class="btn btn-warning">See All</button>
+                  <a href="./pages/pelanggan/index.php" id="btnsee" class="btn btn-warning">See All</a>
                 </div>
               </div>
             </div>
@@ -207,7 +194,7 @@
               <div class="row">
                 <div class="col-lg">
                   <h5>About</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatum eveniet velit vero earum reiciendis recusandae saepe pariatur non voluptatem!</p>
+                  <p>Source code project ini bisa kalian dapatkan di <a href="https://github.com/bdrsmsdn/tugas-rpl">Github</a></p>
                 </div>
                 <div class="col-lg">
                   <h5>Archives</h5>
@@ -226,8 +213,8 @@
                   </ul>
                 </div>
                 <div class="col-lg">
-                  <h5>Newsletter</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatum eveniet velit vero earum reiciendis recusandae saepe pariatur non voluptatem!</p>
+                  <h5>Terima kasih kepada</h5>
+                  <p>Semua pihak yang telah membantu baik motivasi ataupun materi yang tidak dapat penulis sebutkan satu per satu.</p>
                 </div>
               </div>
             </div>
